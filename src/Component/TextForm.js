@@ -5,15 +5,18 @@ export default function TextForm(props) {
         // console.log("Uppercase was clicked: " + text);
         let newText = text.toUpperCase();
         setText(newText);
+        props.showAlert("Converted to UpperCase","succes");
     };
 
     const handleLoclick =() =>{
         let newText = text.toLowerCase();
         setText(newText);
+        props.showAlert("Converted to LowerCase","succes");
     }
 
     const handleClearclick =() =>{
         setText("");
+        props.showAlert("Boos all clear","succes");
     }
     const handleCopyclick =()=>{
         navigator.clipboard.writeText(text).then(()=>{
@@ -25,6 +28,7 @@ export default function TextForm(props) {
     const handlePastclick =()=>{
         navigator.clipboard.readText().then((ClipboardItem)=>{
             setText(ClipboardItem);
+            props.showAlert("Sab Cipkgaya","succes");
         }).catch((err)=>{
             alert("Failed to paste"+err);
         })
@@ -43,11 +47,7 @@ export default function TextForm(props) {
         <>
         <div className='container' style={{color: props.mode === 'dark' ? 'white' : 'black'}}>
             <h1>{props.heading} </h1> 
-            <button 
-            className="btn btn-primary" 
-            onClick={handleClearclick}
-            style={{ position: 'absolute', top: 57, right: 130, margin: '10px' }}>
-                Clear</button>
+            
 
             <div className="mb-3">
                 {/* <label htmlFor="myBox" className="form-label">Enter Your Comment</label> */}
@@ -57,6 +57,7 @@ export default function TextForm(props) {
             <button className="btn btn-primary mx-1" onClick={handleLoclick}>Convert to LowerCase</button>
             <button className="btn btn-primary mx-1"  onClick={handleCopyclick}>Copy Clipboard</button>
             <button className="btn btn-primary mx-1"  onClick={handlePastclick}>Paste hear</button>
+            <button className="btn btn-primary mx-1"  onClick={handleClearclick}>Clear</button>
             
         </div>
         <div className="container my-3" style={{color: props.mode === 'dark' ? 'white' : 'black'}}>
