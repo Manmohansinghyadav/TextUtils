@@ -23,10 +23,18 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = 'grey';
       showAlert("Dark mode has been enabled", "success");
+      document.title ='TextUtils - DarkMode'
+      setInterval(()=>{
+        document.title ='TextUtils Made BY Manmohan Singh'
+      },2000);
+      setInterval(()=>{
+        document.title ='Install now'
+      },1500);
     } else {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light mode has been enabled", "success");
+      document.title ='TextUtils - LightMode'
     }
   }
 
