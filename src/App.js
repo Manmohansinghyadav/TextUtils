@@ -3,11 +3,12 @@ import TextForm from './Component/TextForm';
 import About from './Component/About';
 import Alerts from './Component/Alerts';
 import React, { useState } from 'react';
+import BgColor from './Component/BgColor';
+
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  
 } from "react-router-dom";
 
 function App() {
@@ -44,18 +45,20 @@ function App() {
     }
   };
 
+  const handleColorChange = (color) => {
+    document.body.style.backgroundColor = color;
+  };
+
   return (
     <>
       <Router>
+        <BgColor onColorChange={handleColorChange} />
         <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
         <Alerts alert={alert} />
         <div className="container my-3">
-          <Routes> {/*for using v6 */}
-      {/* /users--> Component-1 
-      /users/home -->--> Componet 2 */}
+          <Routes>
             <Route exact path="/about" element={<About />} />
-            <Route path="/"
-             element={<TextForm showAlert={showAlert} heading="Enter your Comment" mode={mode} />} />
+            <Route path="/" element={<TextForm showAlert={showAlert} heading="Enter your Comment" mode={mode} />} />
           </Routes>
         </div>
       </Router>

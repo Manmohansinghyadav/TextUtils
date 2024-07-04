@@ -37,7 +37,8 @@ export default function About() {
                         </button>
                     </h2>
                     <div id="flush-collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                        <div className="accordion-body"> <b>Manmohan singh</b> is the founder oof TextUtils it is a web application for <code>copy,paise,make UpperCase</code> in you text sentenses</div>
+                        <div className="accordion-body"> <b>Manmohan singh</b> is the founder oof TextUtils it is a web application for <code>copy,paise,make UpperCase</code> in you text sentenses.<br/>
+                        Manmohan singh persioung <b>BCA</b> in Its college,Mohan nager</div>
                     </div>
                 </div>
                 <div className="accordion-item" >
